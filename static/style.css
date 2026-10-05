@@ -1,0 +1,634 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    border-radius: 12px;
+}
+
+section {
+    background: white;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+}
+
+.success-page {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.success-btn a {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+    background: #222;
+    color: #e9ecef;
+}
+
+.success-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    flex: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 600px) {
+    .success-card {
+        flex-direction: column;
+    }
+}
+
+
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    flex: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+}
+
+.card-number {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.admin-menu {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.admin-menu a {
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: #e9ecef;
+    color: #222;
+    text-decoration: none;
+}
+.admin-menu a:last-child {
+    background: #222;
+    color: white;
+}
+
+
+@media (max-width: 600px) {
+    .dashboard-cards {
+        flex-direction: column;
+    }
+
+    .admin-menu {
+        flex-direction: column;
+    }
+}
+
+.messages-page {
+    width: 100%;
+}
+
+.message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.message-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.message-header h2 {
+    margin: 0;
+}
+
+.message-header span {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.message-email {
+    margin-top: 15px;
+}
+
+.message-text {
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    background: #f4f6f8;
+    line-height: 1.6;
+}
+
+.message-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.edit-btn {
+    background: #e9ecef;
+    color: #222;
+}
+
+.delete-btn {
+    background: #222;
+    color: white;
+}
+
+.message-actions form {
+    margin: 0;
+}
+
+.empty-messages {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.messages-navigation {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.messages-navigation a {
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .message-card {
+        padding: 18px;
+    }
+
+    .message-header {
+        align-items: flex-start;
+    }
+
+    .message-actions {
+        flex-direction: column;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .messages-navigation {
+        flex-direction: column;
+    }
+}
+
+.messages-navigation a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    background: #e9ecef;
+    color: #222;
+}
+
+.messages-navigation a:last-child {
+    background: #222;
+    color: white;
+}
+
+.messages-navigation a:hover {
+    opacity: 0.8;
+}
+
+.edit-page {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.edit-form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+}
+
+.edit-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.edit-form label:first-child {
+    margin-top: 0;
+}
+
+.edit-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.update-btn,
+.cancel-btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.update-btn {
+    background: #222;
+    color: white;
+}
+
+.cancel-btn {
+    background: #e9ecef;
+    color: #222;
+}
+
+.update-btn:hover,
+.cancel-btn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .edit-form {
+        padding: 18px;
+    }
+
+    .edit-actions {
+        flex-direction: column;
+    }
+
+    .update-btn,
+    .cancel-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Login Page */
+
+.login-page {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h1 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    margin-top: 0;
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.login-card label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.login-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #222;
+}
+
+.login-card button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    opacity: 0.85;
+}
+
+.login-error {
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    background: #f8d7da;
+    color: #842029;
+}
+
+.back-profile {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #222;
+    text-decoration: none;
+}
+
+.back-profile:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .login-card {
+        padding: 22px;
+    }
+
+    .login-page {
+        padding: 20px 10px;
+    }
+}
+
+/* Settings Page */
+
+.settings-page {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.settings-card {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.settings-card h1 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.settings-subtitle {
+    margin-top: 0;
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.settings-card label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.settings-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.settings-card input:focus {
+    outline: none;
+    border-color: #222;
+}
+
+.settings-card button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.settings-card button:hover {
+    opacity: 0.85;
+}
+
+.settings-error,
+.settings-success {
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+}
+
+.settings-error {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.settings-success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.back-admin {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #222;
+    text-decoration: none;
+}
+
+.back-admin:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .settings-card {
+        padding: 22px;
+    }
+
+    .settings-page {
+        padding: 20px 10px;
+    }
+}
+ 
+.admin-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.admin-menu a {
+    display: inline-block;
+    padding: 11px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    background: #e9ecef;
+    color: #222;
+}
+
+.admin-menu a:hover {
+    opacity: 0.8;
+}
+
+.admin-menu a:last-child {
+    background: #222;
+    color: white;
+}
+
+.admin-welcome {
+    margin-bottom: 25px;
+}
+
+.current-account {
+    background: #f4f6f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.current-account p {
+    margin: 0 0 5px;
+    opacity: 0.7;
+}
+
+.current-account strong {
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+
+    .admin-menu {
+        flex-direction: column;
+    }
+
+    .admin-menu a {
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
