@@ -7,10 +7,7 @@ import secrets
 
 app = Flask(__name__)
 
-app.secret_key = secrets.token_hex(32)
-
-
-csrf = CSRFProtect(app)
+app.secret_key = os.environ["FLASK_SECRET_KEY"]
 
 
 #connect sqlite3
