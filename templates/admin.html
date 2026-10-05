@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="admin-dashboard">
+
+    <h1>Admin Dashboard</h1>
+
+    <p class="admin-welcome">
+    Welcome, <strong>{{ session["username"] }}</strong>
+    </p>
+    
+    <h2>Statistics</h2>
+
+    <div class="dashboard-cards">
+
+        <!-- Total Messages Card -->
+        <div class="dashboard-card">
+            <h3>Total Messages</h3>
+            <p class="card-number">{{ messages|length }}</p>
+            <p>Messages received through your profile.</p>
+        </div>
+
+        <!-- Latest Message Card -->
+        <div class="dashboard-card">
+            <h3>Latest Message</h3>
+
+            {% if messages %}
+                <p class="card-name">
+                    {{ messages[-1]["name"] }}
+                </p>
+
+                <p>Latest person who contacted you.</p>
+            {% else %}
+                <p>No messages yet.</p>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>Admin Menu</h2>
+
+    <div class="admin-menu">
+
+    <a href="/messages">
+        View All Messages
+    </a>
+
+    <a href="/settings">
+        Settings
+    </a>
+
+    <form action="/logout" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button type="submit">Logout</button>
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

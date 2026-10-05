@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="login-page">
+
+    <div class="login-card">
+
+        <h1>Admin Login</h1>
+
+        <p class="login-subtitle">
+            Login to access your dashboard.
+        </p>
+
+        {% if error %}
+            <div class="login-error">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form action="/login" method="post">
+
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <label for="username">Username</label>
+        <input
+        id="username"
+        type="text"
+        name="username"
+        placeholder="Enter username"
+        required
+    >
+
+        <label for="password">Password</label>
+        <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        required
+    >
+
+        <button type="submit">Login</button>
+
+      </form>
+
+        <a href="/" class="back-profile">
+            ← Back to Profile
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

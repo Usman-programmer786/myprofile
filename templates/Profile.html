@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="container">
+  <h1>
+    {{name}}
+  </h1>
+  <p>
+    I am learning computer science and programming.
+  </p>
+  <h2>
+    My Skills:
+  </h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Python</li>
+      <li>SQL</li>
+      <li>Flask</li>
+    </ul>
+  <h2>
+    About Me
+  </h2>
+  <p>
+    I am a programmer.
+  </p>
+  <h2>
+    Contact Us
+  </h2>
+  <a href="https://www.google.com">Visit Google</a>
+  
+  <form action="/submit" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" placeholder="Name" autocomplete="off" required>
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="email" placeholder="e-mail" autocomplete="off" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" autocomplete="off" placeholder="Type your Message here" required ></textarea>
+    <button type="submit">Submit</button>
+    </form>
+  </div>
+{% endblock %}

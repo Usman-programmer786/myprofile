@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="messages-page">
+
+    <h1>All Messages</h1>
+
+    {% if messages %}
+
+        <div class="message-list">
+
+            {% for message in messages %}
+
+                <div class="message-card">
+
+                    <div class="message-header">
+                        <h2>{{ message["name"] }}</h2>
+                        <span>#{{ message["id"] }}</span>
+                    </div>
+
+                    <p class="message-email">
+                        <strong>Email:</strong>
+                        {{ message["email"] }}
+                    </p>
+
+                    <p class="message-text">
+                        {{ message["message"] }}
+                    </p>
+
+                    <div class="message-actions">
+
+                        <a
+                            href="/edit/{{ message['id'] }}"
+                            class="edit-btn"
+                        >
+                            Edit
+                        </a>
+
+                        <form
+                            action="/delete/{{ message['id'] }}"
+                            method="post"
+                        >
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button
+                                type="submit"
+                                class="delete-btn"
+                            >
+                                Delete
+                            </button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-messages">
+            <p>No messages yet.</p>
+        </div>
+
+    {% endif %}
+
+    <div class="messages-navigation">
+        <a href="/admin">← Back to Dashboard</a>
+        <form action="/logout" method="post">
+         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button type="submit">Logout</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

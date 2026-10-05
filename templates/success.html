@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+     <div class="success-page">
+        <h1>Thank You, {{name}}!</h1>
+
+        <p>Your message has been received.</p>
+      <div class="success-card">
+        <h2>Your Details</h2>
+
+        <p><strong>Name:</strong> {{name}}</p>
+
+        <p><strong>Email:</strong> {{email}}</p>
+
+        <p><strong>Message:</strong> {{message}}</p>
+      </div>
+        <br>
+      
+        <div class="success-btn">
+            <a href="/">← Back to Profile</a>
+        </div>
+      </div>
+{% endblock %}

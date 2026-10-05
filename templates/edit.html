@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="edit-page">
+
+    <h1>Edit Message</h1>
+
+    <form action="/edit/{{ message['id'] }}" method="post" class="edit-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label for="name">Name</label>
+        <input
+            id="name"
+            type="text"
+            name="name"
+            value="{{ message['name'] }}"
+            required
+        >
+
+        <label for="email">Email</label>
+        <input
+            id="email"
+            type="email"
+            name="email"
+            value="{{ message['email'] }}"
+            required
+        >
+
+        <label for="message">Message</label>
+        <textarea
+            id="message"
+            name="message"
+            required
+        >{{ message['message'] }}</textarea>
+
+        <div class="edit-actions">
+            <button type="submit" class="update-btn">
+                Update Message
+            </button>
+
+            <a href="/messages" class="cancel-btn">
+                Cancel
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
