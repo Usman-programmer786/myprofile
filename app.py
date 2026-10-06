@@ -2,12 +2,18 @@ from flask import Flask, request, render_template, session, redirect, url_for
 import sqlite3
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_wtf.csrf import CSRFProtect
+from flask_wtf.csrf import CSRFProtect,generate_csrf
 import secrets
 
 app = Flask(__name__)
 
 app.secret_key = os.environ["FLASK_SECRET_KEY"]
+
+csrf = CSRFProtect(app)
+
+@app.context_processor
+def inject_csrf_token():
+    return dict(csrf_token=generate_csrf)
 
 
 #connect sqlite3
