@@ -12,7 +12,7 @@ app.secret_key = os.environ["FLASK_SECRET_KEY"]
 
 #connect sqlite3
 def get_db():
-    conn = sqlite3.connect("messages.db")
+    conn = sqlite3.connect("/data/messages.db")
     conn.row_factory = sqlite3.Row
     return conn
  
