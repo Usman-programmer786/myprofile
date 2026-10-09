@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
            Scroll Reveal
         -------------------- */
 
-        const revealElements = profilePage.querySelectorAll(
-            ".section, .skill-card, .education-card, .learning-card, .service-card, .project-card, .journey-item, .contact-content"
-        );
+        const revealElements = profilePage.querySelectorAll(".reveal");
 
         if ("IntersectionObserver" in window) {
 
