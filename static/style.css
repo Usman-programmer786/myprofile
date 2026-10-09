@@ -1276,3 +1276,15 @@ a {
         transform: none;
     }
 }
+
+/* Restore smooth reveal animation */
+.profile-page .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.profile-page .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
