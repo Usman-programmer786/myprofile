@@ -632,3 +632,647 @@ a {
         box-sizing: border-box;
     }
 }
+/* =========================================================
+   PROFILE PAGE — SCOPED DESIGN
+   This section is intentionally scoped under .profile-page
+   so the existing Admin/Login/Messages/Settings styling stays safe.
+   ========================================================= */
+
+.profile-page {
+    --profile-bg: #f7f8fa;
+    --profile-surface: #ffffff;
+    --profile-text: #171717;
+    --profile-muted: #6b7280;
+    --profile-border: #e5e7eb;
+    --profile-dark: #111827;
+    --profile-soft: #f1f3f5;
+    background: var(--profile-bg);
+    color: var(--profile-text);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.profile-page * {
+    box-sizing: border-box;
+}
+
+.profile-page .container {
+    width: min(1120px, calc(100% - 40px));
+    max-width: none;
+    margin: 0 auto;
+}
+
+.profile-page .section {
+    background: transparent;
+    margin-top: 0;
+    padding: 100px 0;
+    border-radius: 0;
+    scroll-margin-top: 82px;
+}
+
+.profile-page .section-label {
+    margin: 0 0 12px;
+    color: var(--profile-muted);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.profile-page .section-title {
+    max-width: 760px;
+    margin: 0 0 18px;
+    color: var(--profile-text);
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.08;
+}
+
+.profile-page .section-text {
+    max-width: 760px;
+    margin: 0 0 18px;
+    color: var(--profile-muted);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Header */
+.profile-page .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--profile-text);
+    padding: 0;
+    text-align: left;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+    backdrop-filter: blur(12px);
+}
+
+.profile-page .header-container {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.profile-page .logo {
+    flex-shrink: 0;
+    color: var(--profile-text);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+}
+
+.profile-page .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.profile-page .main-nav a {
+    position: relative;
+    padding: 9px 10px;
+    color: var(--profile-muted);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.profile-page .main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 2px;
+    height: 2px;
+    background: var(--profile-dark);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+}
+
+.profile-page .main-nav a:hover,
+.profile-page .main-nav a.active {
+    color: var(--profile-text);
+}
+
+.profile-page .main-nav a.active::after {
+    transform: scaleX(1);
+}
+
+/* Hero */
+.profile-page .hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(17, 24, 39, 0.07), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
+}
+
+.profile-page .hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.profile-page .hero-text {
+    max-width: 820px;
+}
+
+.profile-page .hero-tag {
+    display: inline-flex;
+    margin: 0 0 20px;
+    padding: 8px 12px;
+    border: 1px solid var(--profile-border);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--profile-muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile-page .hero h1 {
+    margin: 0;
+    color: var(--profile-text);
+    font-size: clamp(48px, 9vw, 92px);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+}
+
+.profile-page .hero-intro {
+    max-width: 700px;
+    margin: 28px 0 0;
+    color: var(--profile-muted);
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.7;
+}
+
+.profile-page .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+}
+
+.profile-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 1px solid var(--profile-dark);
+    border-radius: 10px;
+    background: var(--profile-dark);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.profile-page .btn:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    background: #000;
+}
+
+.profile-page .btn-secondary {
+    background: transparent;
+    color: var(--profile-dark);
+}
+
+.profile-page .btn-secondary:hover {
+    background: var(--profile-dark);
+    color: white;
+}
+
+/* Grids */
+.profile-page .skills-grid,
+.profile-page .education-grid,
+.profile-page .learning-grid,
+.profile-page .services-grid,
+.profile-page .projects-grid {
+    display: grid;
+    gap: 18px;
+    margin-top: 42px;
+}
+
+.profile-page .skills-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.profile-page .education-grid,
+.profile-page .learning-grid,
+.profile-page .services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.profile-page .education-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.profile-page .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Cards */
+.profile-page .skill-card,
+.profile-page .education-card,
+.profile-page .learning-card,
+.profile-page .service-card,
+.profile-page .project-card,
+.profile-page .journey-item,
+.profile-page .contact-content {
+    background: var(--profile-surface);
+    border: 1px solid var(--profile-border);
+    border-radius: 18px;
+}
+
+.profile-page .skill-card,
+.profile-page .education-card,
+.profile-page .learning-card,
+.profile-page .service-card,
+.profile-page .project-card {
+    padding: 26px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-page .skill-card:hover,
+.profile-page .education-card:hover,
+.profile-page .learning-card:hover,
+.profile-page .service-card:hover,
+.profile-page .project-card:hover {
+    transform: translateY(-5px);
+    border-color: #cfd3d8;
+    box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+}
+
+.profile-page .skill-card h3,
+.profile-page .education-card h3,
+.profile-page .learning-card h3,
+.profile-page .service-card h3,
+.profile-page .project-card h3,
+.profile-page .journey-item h3,
+.profile-page .contact-content h3 {
+    margin: 0 0 10px;
+    color: var(--profile-text);
+    font-size: 20px;
+}
+
+.profile-page .skill-card p,
+.profile-page .education-card p,
+.profile-page .learning-card p,
+.profile-page .service-card p,
+.profile-page .project-card p,
+.profile-page .journey-item p,
+.profile-page .contact-content p {
+    margin: 0;
+    color: var(--profile-muted);
+    line-height: 1.7;
+}
+
+.profile-page .card-kicker,
+.profile-page .project-number {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--profile-muted);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* Projects */
+.profile-page .project-card {
+    min-height: 260px;
+}
+
+.profile-page .project-number {
+    color: var(--profile-text);
+}
+
+.profile-page .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.profile-page .project-tags span {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--profile-soft);
+    color: var(--profile-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-page .project-card-muted {
+    background: #fbfbfc;
+}
+
+/* Journey */
+.profile-page .journey-list {
+    position: relative;
+    display: grid;
+    gap: 14px;
+    margin-top: 42px;
+}
+
+.profile-page .journey-item {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 20px;
+    padding: 25px;
+}
+
+.profile-page .journey-step {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--profile-dark);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* Contact */
+.profile-page .contact-content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    gap: 40px;
+    margin-top: 42px;
+    padding: 34px;
+}
+
+.profile-page .contact-info {
+    padding-top: 10px;
+}
+
+.profile-page .contact-form {
+    margin: 0;
+}
+
+.profile-page .contact-form label {
+    display: block;
+    margin: 0 0 7px;
+    color: var(--profile-text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.profile-page .contact-form input,
+.profile-page .contact-form textarea {
+    width: 100%;
+    margin: 0 0 18px;
+    padding: 13px 14px;
+    border: 1px solid var(--profile-border);
+    border-radius: 10px;
+    background: white;
+    color: var(--profile-text);
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-page .contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.profile-page .contact-form input:focus,
+.profile-page .contact-form textarea:focus {
+    outline: none;
+    border-color: #9ca3af;
+    box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.06);
+}
+
+.profile-page .contact-submit {
+    width: 100%;
+}
+
+/* Footer */
+.profile-page .profile-footer {
+    padding: 60px 0 0;
+    background: #111827;
+    color: white;
+}
+
+.profile-page .footer-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 42px;
+}
+
+.profile-page .footer-content h2 {
+    margin: 0 0 8px;
+    color: white;
+    font-size: 20px;
+}
+
+.profile-page .footer-content p {
+    margin: 0;
+    color: #9ca3af;
+}
+
+.profile-page .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.profile-page .footer-links a {
+    color: #e5e7eb;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.profile-page .footer-links a:hover {
+    color: white;
+}
+
+.profile-page .footer-bottom {
+    padding: 18px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.profile-page .footer-bottom p {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+/* Reveal animation */
+.profile-page .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.profile-page .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll to top — global because script runs on every page */
+.scroll-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 2000;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    background: #111827;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Responsive Profile */
+@media (max-width: 1000px) {
+    .profile-page .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .profile-page .learning-grid,
+    .profile-page .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .profile-page .header-container {
+        min-height: auto;
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .profile-page .main-nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+    }
+
+    .profile-page .main-nav a {
+        flex: 0 0 auto;
+    }
+
+    .profile-page .hero {
+        min-height: 580px;
+        padding: 90px 0;
+    }
+
+    .profile-page .section {
+        padding: 76px 0;
+    }
+
+    .profile-page .skills-grid,
+    .profile-page .education-grid,
+    .profile-page .learning-grid,
+    .profile-page .services-grid,
+    .profile-page .projects-grid,
+    .profile-page .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-page .contact-content {
+        gap: 28px;
+        padding: 24px;
+    }
+
+    .profile-page .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 520px) {
+    .profile-page .container,
+    .profile-page .header-container {
+        width: min(100% - 28px, 1120px);
+    }
+
+    .profile-page .hero h1 {
+        font-size: clamp(42px, 15vw, 64px);
+    }
+
+    .profile-page .hero-actions {
+        flex-direction: column;
+    }
+
+    .profile-page .hero-actions .btn {
+        width: 100%;
+    }
+
+    .profile-page .section-title {
+        font-size: 32px;
+    }
+
+    .profile-page .skill-card,
+    .profile-page .education-card,
+    .profile-page .learning-card,
+    .profile-page .service-card,
+    .profile-page .project-card {
+        padding: 22px;
+    }
+
+    .profile-page .journey-item {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 22px;
+    }
+
+    .profile-page .contact-content {
+        padding: 20px;
+    }
+
+    .scroll-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-page .reveal,
+    .profile-page .reveal.visible,
+    .profile-page .btn,
+    .profile-page .skill-card,
+    .profile-page .education-card,
+    .profile-page .learning-card,
+    .profile-page .service-card,
+    .profile-page .project-card,
+    .scroll-top {
+        transition: none;
+        transform: none;
+    }
+}
