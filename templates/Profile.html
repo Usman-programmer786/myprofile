@@ -1,515 +1,336 @@
 {% extends "base.html" %}
 
-{% block title %}My IT Profile{% endblock %}
+{% block title %}Muhammad Usman | IT Profile{% endblock %}
 
 {% block content %}
+<div class="profile-page">
 
-<!-- ==================== HEADER / NAVIGATION ==================== -->
-<header class="site-header">
-    <div class="container header-container">
+    <!-- ==================== HEADER / NAVIGATION ==================== -->
+    <header class="site-header">
+        <div class="header-container">
+            <a class="logo" href="#home">MUHAMMAD USMAN</a>
 
-        <div class="logo">
-            <a href="/">My Profile</a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#learning">Learning</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#journey">Journey</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
+    </header>
 
-        <nav class="main-nav">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <main class="profile-main">
 
-    </div>
-</header>
+        <!-- ==================== HERO ==================== -->
+        <section id="home" class="hero section reveal">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="hero-tag">IT Student • Programmer • Web Developer</p>
+                    <h1>{{ name }}</h1>
+                    <p class="hero-intro">
+                        I am learning computer science, programming and web development,
+                        with a focus on building practical projects and improving my skills.
+                    </p>
 
+                    <div class="hero-actions">
+                        <a class="btn" href="#projects">View Projects</a>
+                        <a class="btn btn-secondary" href="#contact">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<main>
-
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero section">
-        <div class="container hero-content">
-
-            <div class="hero-text">
-                <p class="hero-tag">IT & Web Development</p>
-
-                <h1>{{ name }}</h1>
-
-                <h2>
-                    Computer Science Learner & Aspiring Web Developer
-                </h2>
-
-                <p class="hero-description">
-                    I am learning computer science, programming and web development,
-                    with a focus on building practical projects and improving my skills.
+        <!-- ==================== ABOUT ==================== -->
+        <section id="about" class="section about-section reveal">
+            <div class="container">
+                <p class="section-label">About Me</p>
+                <h2 class="section-title">Learning by building</h2>
+                <p class="section-text">
+                    I am interested in computer science, programming and practical IT skills.
+                    I enjoy learning how websites and web applications work and then turning
+                    what I learn into working projects.
                 </p>
+                <p class="section-text">
+                    I completed CS50 and am continuing my practical web-development journey
+                    with HTML, CSS, Python, Flask and SQL.
+                </p>
+            </div>
+        </section>
 
-                <div class="hero-actions">
-                    <a href="#projects" class="btn">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        <!-- ==================== SKILLS ==================== -->
+        <section id="skills" class="section skills-section reveal">
+            <div class="container">
+                <p class="section-label">Skills</p>
+                <h2 class="section-title">What I currently work with</h2>
+
+                <div class="skills-grid">
+                    <article class="skill-card reveal">
+                        <h3>HTML</h3>
+                        <p>Building structured and semantic web pages.</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <h3>CSS</h3>
+                        <p>Creating responsive layouts, styling and visual design.</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <h3>Python</h3>
+                        <p>Programming fundamentals, logic and application development.</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <h3>SQL</h3>
+                        <p>Working with relational databases, queries and stored data.</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <h3>Flask</h3>
+                        <p>Building Python-based web applications and backend routes.</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- ==================== EDUCATION ==================== -->
+        <section id="education" class="section education-section reveal">
+            <div class="container">
+                <p class="section-label">Education</p>
+                <h2 class="section-title">My academic background</h2>
 
+                <div class="education-grid">
+                    <article class="education-card reveal">
+                        <span class="card-kicker">Matric</span>
+                        <h3>Computer Science</h3>
+                        <p>Secondary education with Computer Science.</p>
+                    </article>
 
-    <!-- ==================== ABOUT SECTION ==================== -->
-    <section id="about" class="section about-section">
-        <div class="container">
-
-            <p class="section-label">About Me</p>
-            <h2 class="section-title">Who I Am</h2>
-
-            <div class="about-content">
-
-                <div class="about-text">
-                    <p>
-                        I am interested in computer science, programming and
-                        web development. I enjoy learning how websites and
-                        applications work and turning what I learn into practical projects.
-                    </p>
-
-                    <p>
-                        I have completed CS50 and am continuing my journey
-                        into practical web development.
-                    </p>
+                    <article class="education-card reveal">
+                        <span class="card-kicker">ICS</span>
+                        <h3>Intermediate in Computer Science</h3>
+                        <p>ICS score: 928 / 1100.</p>
+                    </article>
                 </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- ==================== CURRENT LEARNING ==================== -->
+        <section id="learning" class="section learning-section reveal">
+            <div class="container">
+                <p class="section-label">Currently Learning</p>
+                <h2 class="section-title">The next stage of my journey</h2>
 
+                <div class="learning-grid">
+                    <article class="learning-card reveal">
+                        <h3>Responsive Web Development</h3>
+                        <p>Improving HTML and CSS layouts for mobile, tablet and desktop screens.</p>
+                    </article>
 
-    <!-- ==================== SKILLS SECTION ==================== -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
+                    <article class="learning-card reveal">
+                        <h3>JavaScript</h3>
+                        <p>Learning frontend interactivity and browser-side programming.</p>
+                    </article>
 
-            <p class="section-label">My Skills</p>
-            <h2 class="section-title">Technologies I Work With</h2>
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-                    <h3>HTML</h3>
-                    <p>
-                        Building the structure and content of web pages.
-                    </p>
+                    <article class="learning-card reveal">
+                        <h3>Flask & Databases</h3>
+                        <p>Building complete web applications with Python, Flask and SQLite.</p>
+                    </article>
                 </div>
-
-                <div class="skill-card">
-                    <h3>CSS</h3>
-                    <p>
-                        Styling and designing responsive web interfaces.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Python</h3>
-                    <p>
-                        Programming, problem solving and application logic.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>SQL</h3>
-                    <p>
-                        Working with databases, tables and stored information.
-                    </p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Flask</h3>
-                    <p>
-                        Building web applications using Python and Flask.
-                    </p>
-                </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- ==================== SERVICES ==================== -->
+        <section id="services" class="section services-section reveal">
+            <div class="container">
+                <p class="section-label">What I Can Build</p>
+                <h2 class="section-title">Practical web solutions</h2>
 
+                <div class="services-grid">
+                    <article class="service-card reveal">
+                        <h3>Responsive Websites</h3>
+                        <p>Clean HTML and CSS pages designed for different screen sizes.</p>
+                    </article>
 
-    <!-- ==================== EDUCATION SECTION ==================== -->
-    <section id="education" class="section education-section">
-        <div class="container">
+                    <article class="service-card reveal">
+                        <h3>Flask Applications</h3>
+                        <p>Small Python web applications with routes, forms and templates.</p>
+                    </article>
 
-            <p class="section-label">Education</p>
-            <h2 class="section-title">My Educational Background</h2>
-
-            <div class="education-list">
-
-                <div class="education-card">
-                    <h3>Intermediate in Computer Science (ICS)</h3>
-                    <p>
-                        Computer Science background with an ICS score of
-                        928 / 1100.
-                    </p>
+                    <article class="service-card reveal">
+                        <h3>Forms & Database Integration</h3>
+                        <p>Contact forms connected to SQLite for storing and managing data.</p>
+                    </article>
                 </div>
-
-                <div class="education-card">
-                    <h3>Matriculation</h3>
-                    <p>
-                        Matriculation with Computer Science.
-                    </p>
-                </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- ==================== PROJECTS ==================== -->
+        <section id="projects" class="section projects-section reveal">
+            <div class="container">
+                <p class="section-label">Projects</p>
+                <h2 class="section-title">Things I have built</h2>
 
-
-    <!-- ==================== LEARNING SECTION ==================== -->
-    <section id="learning" class="section learning-section">
-        <div class="container">
-
-            <p class="section-label">Currently Learning</p>
-            <h2 class="section-title">My Learning Journey</h2>
-
-            <div class="learning-grid">
-
-                <div class="learning-card">
-                    <h3>Web Development</h3>
-                    <p>
-                        Continuing practical web development using HTML,
-                        CSS, JavaScript and Flask.
-                    </p>
-                </div>
-
-                <div class="learning-card">
-                    <h3>Python</h3>
-                    <p>
-                        Improving Python programming and using it to build
-                        practical applications.
-                    </p>
-                </div>
-
-                <div class="learning-card">
-                    <h3>Databases</h3>
-                    <p>
-                        Practicing SQL and SQLite database integration
-                        in web applications.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- ==================== SERVICES SECTION ==================== -->
-    <section id="services" class="section services-section">
-        <div class="container">
-
-            <p class="section-label">What I Can Do</p>
-            <h2 class="section-title">Services</h2>
-
-            <div class="services-grid">
-
-                <div class="service-card">
-                    <h3>Basic Web Pages</h3>
-                    <p>
-                        Creating simple web pages using HTML and CSS.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Responsive Web Design</h3>
-                    <p>
-                        Building layouts that can adapt to different
-                        screen sizes.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Python Web Applications</h3>
-                    <p>
-                        Building basic web applications using Python
-                        and Flask.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Database Integration</h3>
-                    <p>
-                        Connecting web applications with SQLite
-                        databases.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- ==================== PROJECTS SECTION ==================== -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-
-            <p class="section-label">My Work</p>
-            <h2 class="section-title">Projects</h2>
-
-            <div class="projects-grid">
-
-                <article class="project-card">
-
-                    <div class="project-content">
-                        <p class="project-category">
-                            Flask + SQLite
-                        </p>
-
-                        <h3>Personal Profile & Contact System</h3>
-
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-number">01</div>
+                        <h3>Personal Profile & Contact App</h3>
                         <p>
-                            A Flask-based personal profile application
-                            with contact messages, database storage,
-                            admin login, message management and settings.
+                            A Flask-based personal website with a contact form, SQLite database,
+                            admin login, message management, editing, deletion and account settings.
                         </p>
-
-                        <div class="project-tech">
+                        <div class="project-tags">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>Python</span>
                             <span>Flask</span>
                             <span>SQLite</span>
                         </div>
-                    </div>
-
-                </article>
-
-
-                <!-- Future projects can be added here -->
-
-                <article class="project-card project-placeholder">
-
-                    <div class="project-content">
-                        <p class="project-category">
-                            Coming Soon
-                        </p>
-
-                        <h3>More Projects</h3>
-
+                    </article>
+                    
+                    <article class="project-card reveal">
+                        <div class="project-number">02</div>
+                    
+                        <h3>VBook+ – Kids English Reading Platform</h3>
+                    
                         <p>
-                            More practical projects will be added
-                            as I continue learning and building.
+                            A responsive educational reading platform for children in
+                            Grades 1–5, featuring 15 original stories, search and grade
+                            filters, favorites, read-aloud, dark mode, comments and
+                            donation support.
                         </p>
-                    </div>
-
-                </article>
-
+                    
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                            <span>Responsive Design</span>
+                        </div>
+                        <br>
+                        <div class="project-actions">
+                            <a
+                                class="btn"
+                                href="https://usman-programmer786.github.io/vbook-plus/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card reveal project-card-muted">
+                        <div class="project-number">03</div>
+                        <h3>More Projects Coming</h3>
+                        <p>
+                            This section will grow as I build more real-world projects during my
+                            web-development and programming journey.
+                        </p>
+                    </article>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- ==================== JOURNEY ==================== -->
+        <section id="journey" class="section journey-section reveal">
+            <div class="container">
+                <p class="section-label">Learning Journey</p>
+                <h2 class="section-title">From fundamentals to real projects</h2>
 
+                <div class="journey-list">
+                    <article class="journey-item reveal">
+                        <span class="journey-step">01</span>
+                        <div>
+                            <h3>Computer Science Foundations</h3>
+                            <p>Algorithms, memory, data structures, problem solving and programming concepts.</p>
+                        </div>
+                    </article>
 
-    <!-- ==================== LEARNING JOURNEY ==================== -->
-    <section id="journey" class="section journey-section">
-        <div class="container">
+                    <article class="journey-item reveal">
+                        <span class="journey-step">02</span>
+                        <div>
+                            <h3>Python & SQL</h3>
+                            <p>Learning programming with Python and working with relational databases.</p>
+                        </div>
+                    </article>
 
-            <p class="section-label">My Progress</p>
-            <h2 class="section-title">Learning Journey</h2>
+                    <article class="journey-item reveal">
+                        <span class="journey-step">03</span>
+                        <div>
+                            <h3>Web Development</h3>
+                            <p>Building websites and Flask applications with HTML, CSS, Python and SQL.</p>
+                        </div>
+                    </article>
 
-            <div class="journey-list">
-
-                <div class="journey-item">
-                    <span class="journey-number">01</span>
-
-                    <div>
-                        <h3>Computer Science Fundamentals</h3>
-                        <p>
-                            Learned programming fundamentals, algorithms,
-                            memory, data structures and problem solving.
-                        </p>
-                    </div>
+                    <article class="journey-item reveal">
+                        <span class="journey-step">04</span>
+                        <div>
+                            <h3>Projects & Earning</h3>
+                            <p>Turning practical skills into useful projects and future freelance work.</p>
+                        </div>
+                    </article>
                 </div>
-
-
-                <div class="journey-item">
-                    <span class="journey-number">02</span>
-
-                    <div>
-                        <h3>Python & SQL</h3>
-                        <p>
-                            Learned Python programming and database concepts
-                            using SQL.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="journey-item">
-                    <span class="journey-number">03</span>
-
-                    <div>
-                        <h3>Web Development</h3>
-                        <p>
-                            Learned the fundamentals of the web including
-                            HTML, CSS, HTTP, DNS and web applications.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="journey-item">
-                    <span class="journey-number">04</span>
-
-                    <div>
-                        <h3>Flask Applications</h3>
-                        <p>
-                            Started building practical web applications
-                            using Flask, SQLite and authentication.
-                        </p>
-                    </div>
-                </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- ==================== CONTACT ==================== -->
+        <section id="contact" class="section contact-section reveal">
+            <div class="container">
+                <p class="section-label">Contact</p>
+                <h2 class="section-title">Let's connect</h2>
 
+                <div class="contact-content reveal">
+                    <div class="contact-info">
+                        <h3>Send me a message</h3>
+                        <p>
+                            Have a question, idea or project-related message? Use the form and
+                            your message will be stored securely for review through the admin area.
+                        </p>
+                    </div>
 
-    <!-- ==================== CONTACT SECTION ==================== -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-
-            <p class="section-label">Get In Touch</p>
-            <h2 class="section-title">Contact Me</h2>
-
-            <p class="section-text">
-                Have a question or want to get in touch?
-                Send me a message using the form below.
-            </p>
-
-
-            <div class="contact-content">
-
-                <div class="contact-info">
-
-                    <h3>Let's Connect</h3>
-
-                    <p>
-                        I am always interested in learning, building
-                        projects and connecting with people interested
-                        in technology.
-                    </p>
-
-                </div>
-
-
-                <form
-                    class="contact-form"
-                    action="/submit"
-                    method="post"
-                >
-
-                    <input
-                        type="hidden"
-                        name="csrf_token"
-                        value="{{ csrf_token() }}"
-                    >
-
-                    <div class="form-group">
+                    <form class="contact-form" action="{{ url_for('submit') }}" method="post">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
                         <label for="name">Name</label>
-
-                        <input
-                            id="name"
-                            name="name"
-                            type="text"
-                            placeholder="Your name"
-                            autocomplete="off"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
+                        <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
 
                         <label for="email">Email</label>
-
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            placeholder="Your email"
-                            autocomplete="off"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
+                        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
 
                         <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Type your message here"
-                            autocomplete="off"
-                            required
-                        ></textarea>
+                        <button class="btn contact-submit" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-                    </div>
+    </main>
 
-
-                    <button type="submit" class="btn">
-                        Send Message
-                    </button>
-
-                </form>
-
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="profile-footer">
+        <div class="container footer-content">
+            <div>
+                <h2>MUHAMMAD USMAN</h2>
+                <p>Learning. Building. Improving.</p>
             </div>
 
+            <div class="footer-links">
+                <a href="#home">Back to top</a>
+                <a href="{{ url_for('login') }}">Admin Login</a>
+            </div>
         </div>
-    </section>
-
-</main>
-
-
-<!-- ==================== FOOTER ==================== -->
-<footer class="site-footer">
-
-    <div class="container footer-content">
-
-        <div class="footer-about">
-            <h3>{{ name }}</h3>
-
-            <p>
-                Learning. Building. Growing.
-            </p>
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
 
         <div class="footer-bottom">
-
-            <p>
-                &copy; 2026 {{ name }}. All rights reserved.
-            </p>
-
+            <p>&copy; {{ name }}. All rights reserved.</p>
         </div>
+    </footer>
 
-    </div>
-
-</footer>
-
+</div>
 {% endblock %}
