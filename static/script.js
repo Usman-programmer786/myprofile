@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+mdocument.addEventListener("DOMContentLoaded", function () {
 
     const profilePage = document.querySelector(".profile-page");
 
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         if (entry.isIntersecting) {
                             entry.target.classList.add("visible");
+                            console.log("Reveal triggered:", entry.target);
                             observer.unobserve(entry.target);
                         }
 
