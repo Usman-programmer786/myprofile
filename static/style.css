@@ -1276,3 +1276,8 @@ a {
         transform: none;
     }
 }
+/* Temporary visibility fix */
+.profile-page .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+}
