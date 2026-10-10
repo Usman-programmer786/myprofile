@@ -9,44 +9,36 @@ mdocument.addEventListener("DOMContentLoaded", function () {
     if (profilePage) {
 
         /* --------------------
-           Scroll Reveal
-        -------------------- */
+   Scroll Reveal
+-------------------- */
 
-        const revealElements = profilePage.querySelectorAll(".reveal");
+const revealElements = profilePage.querySelectorAll(".reveal");
 
-        if ("IntersectionObserver" in window) {
-
-            const revealObserver = new IntersectionObserver(
-                function (entries, observer) {
-
-                    entries.forEach(function (entry) {
-
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("visible");
-                            console.log("Reveal triggered:", entry.target);
-                            observer.unobserve(entry.target);
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.12
+if (revealElements.length && "IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
                 }
-            );
-
-            revealElements.forEach(function (element) {
-                element.classList.add("reveal");
-                revealObserver.observe(element);
             });
-
-        } else {
-
-            revealElements.forEach(function (element) {
-                element.classList.add("visible");
-            });
-
+        },
+        {
+            threshold: 0.12
         }
+    );
+
+    document.documentElement.classList.add("js-enabled");
+
+    revealElements.forEach(function (element) {
+        revealObserver.observe(element);
+    });
+} else {
+    revealElements.forEach(function (element) {
+        element.classList.add("visible");
+    });
+}
 
 
         /* --------------------
