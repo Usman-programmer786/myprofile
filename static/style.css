@@ -697,9 +697,11 @@ a {
 
 /* Header */
 .profile-page .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
+    width: 100%;
     background: rgba(255, 255, 255, 0.94);
     color: var(--profile-text);
     padding: 0;
@@ -1119,25 +1121,16 @@ a {
     font-size: 13px;
 }
 
-/* Smooth scroll reveal — enabled only when JS is ready */
-.js-enabled .profile-page .reveal {
+/* Reveal animation */
+.profile-page .reveal {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.js-enabled .profile-page .reveal.visible {
+.profile-page .reveal.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .js-enabled .profile-page .reveal,
-    .js-enabled .profile-page .reveal.visible {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
 }
 
 /* Scroll to top — global because script runs on every page */
