@@ -1119,16 +1119,25 @@ a {
     font-size: 13px;
 }
 
-/* Reveal animation */
-.profile-page .reveal {
+/* Smooth scroll reveal — enabled only when JS is ready */
+.js-enabled .profile-page .reveal {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.profile-page .reveal.visible {
+.js-enabled .profile-page .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js-enabled .profile-page .reveal,
+    .js-enabled .profile-page .reveal.visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* Scroll to top — global because script runs on every page */
@@ -1275,16 +1284,4 @@ a {
         transition: none;
         transform: none;
     }
-}
-
-/* Restore smooth reveal animation */
-.profile-page .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.profile-page .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
