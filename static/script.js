@@ -1,4 +1,4 @@
-mdocument.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     const profilePage = document.querySelector(".profile-page");
 
