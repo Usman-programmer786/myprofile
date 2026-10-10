@@ -9,36 +9,43 @@ document.addEventListener("DOMContentLoaded", function () {
     if (profilePage) {
 
         /* --------------------
-   Scroll Reveal
--------------------- */
+           Scroll Reveal
+        -------------------- */
 
-const revealElements = profilePage.querySelectorAll(".reveal");
+        const revealElements = profilePage.querySelectorAll(".reveal");
 
-if (revealElements.length && "IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-        function (entries, observer) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
+        if ("IntersectionObserver" in window) {
+
+            const revealObserver = new IntersectionObserver(
+                function (entries, observer) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
                 }
+            );
+
+            revealElements.forEach(function (element) {
+                element.classList.add("reveal");
+                revealObserver.observe(element);
             });
-        },
-        {
-            threshold: 0.12
+
+        } else {
+
+            revealElements.forEach(function (element) {
+                element.classList.add("visible");
+            });
+
         }
-    );
-
-    document.documentElement.classList.add("js-enabled");
-
-    revealElements.forEach(function (element) {
-        revealObserver.observe(element);
-    });
-} else {
-    revealElements.forEach(function (element) {
-        element.classList.add("visible");
-    });
-}
 
 
         /* --------------------
