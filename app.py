@@ -4,6 +4,7 @@ import os
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf.csrf import CSRFProtect,generate_csrf
 import secrets
+from flask import make_response
 
 app = Flask(__name__)
 
@@ -73,6 +74,21 @@ def home():
     name = "MUHAMMAD USMAN"
     return render_template("Profile.html", name = name)
 
+
+# XML sitemap for search engines
+@app.route("/sitemap.xml")
+def sitemap():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://myprofile.de.deplexo.com/</loc>
+    </url>
+</urlset>"""
+
+    response = make_response(xml)
+    response.headers["Content-Type"] = "application/xml; charset=utf-8"
+    return response
+    
 
 #login
 @app.route("/login", methods=["GET", "POST"])
