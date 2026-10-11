@@ -88,6 +88,19 @@ def sitemap():
     response = make_response(xml)
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
     return response
+
+
+# Robots.txt for search engines
+@app.route("/robots.txt")
+def robots():
+    content = """User-agent: *
+Allow: /
+
+Sitemap: https://myprofile.de.deplexo.com/sitemap.xml
+"""
+    response = make_response(content)
+    response.headers["Content-Type"] = "text/plain; charset=utf-8"
+    return response
     
 
 #login
